@@ -6,7 +6,8 @@
     "build": "(cd android/ && ./gradlew assembleDebug)",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "bundle-android": "react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --sourcemap-output android/app/src/main/assets/index.android.map --assets-dest android/app/src/main/res/",
-    "test": "jest"
+    "test": "jest",
+    "postinstall": "react-native-port-patcher --old-port 8088 --new-port 8081"
   },
   "dependencies": {
     "react": "15.4.2",
@@ -17,6 +18,7 @@
     "babel-preset-react-native": "1.9.1",
     "eslint-config-rallycoding": "^3.2.0",
     "jest": "18.1.0",
+    "react-native-port-patcher": "^1.0.2",
     "react-test-renderer": "15.4.2"
   },
   "jest": {
